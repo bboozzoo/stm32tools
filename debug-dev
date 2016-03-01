@@ -1,0 +1,17 @@
+#!/bin/bash
+
+BASE_DIR=$(dirname $0)
+source $BASE_DIR/common
+
+if [ -n "$1" ]; then
+    echo "--- flashing device with firmware $1"
+    $BASE_DIR/flash-dev.sh $1
+fi
+
+set -x
+echo
+echo "-- to connect run GDB command: target remote localhost:3333"
+echo
+
+openocd $ocd_args \
+        -f $BASE_DIR/ocd-debug.cfg

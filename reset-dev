@@ -1,0 +1,8 @@
+#!/bin/sh
+
+BASE_DIR=$(dirname $0)
+source $BASE_DIR/common
+
+set -x
+openocd $ocd_args \
+        -f $BASE_DIR/ocd-reset.cfg

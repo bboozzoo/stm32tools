@@ -1,0 +1,1 @@
+ocd_args="-f $BASE_DIR/transport.cfg -f $BASE_DIR/board.cfg"
